@@ -1,0 +1,167 @@
+[gd_scene load_steps=2 format=3 uid="uid://upwvtmqf3n4m"]
+
+[ext_resource type="Script" path="res://calculator.gd" id="1_it2j0"]
+
+[node name="Calculator" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_it2j0")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.199862, 0.211447, 0.231035, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -226.0
+offset_top = -300.0
+offset_right = 226.0
+offset_bottom = 300.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelOutput" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.806546, 0.871586, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "0"
+horizontal_alignment = 2
+vertical_alignment = 1
+clip_text = true
+
+[node name="hbc7-9" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="btn7" type="Button" parent="VBoxContainer/hbc7-9"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "7"
+
+[node name="btn8" type="Button" parent="VBoxContainer/hbc7-9"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "8"
+
+[node name="btn9" type="Button" parent="VBoxContainer/hbc7-9"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "9"
+
+[node name="btnDivide" type="Button" parent="VBoxContainer/hbc7-9"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.972549, 0.513726, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "/"
+
+[node name="hbc4-6" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="btn4" type="Button" parent="VBoxContainer/hbc4-6"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "4"
+
+[node name="btn5" type="Button" parent="VBoxContainer/hbc4-6"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "5"
+
+[node name="btn6" type="Button" parent="VBoxContainer/hbc4-6"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "6"
+
+[node name="btnMultiply" type="Button" parent="VBoxContainer/hbc4-6"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.972549, 0.513726, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "*"
+
+[node name="hbc1-4" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="btn1" type="Button" parent="VBoxContainer/hbc1-4"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "1"
+
+[node name="btn2" type="Button" parent="VBoxContainer/hbc1-4"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "2"
+
+[node name="btn3" type="Button" parent="VBoxContainer/hbc1-4"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "3"
+
+[node name="btnMinus" type="Button" parent="VBoxContainer/hbc1-4"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.972549, 0.513726, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "-"
+
+[node name="hbc0-plus" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="btn0" type="Button" parent="VBoxContainer/hbc0-plus"]
+custom_minimum_size = Vector2(224, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "0"
+
+[node name="btnEquals" type="Button" parent="VBoxContainer/hbc0-plus"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "="
+
+[node name="btnPlus" type="Button" parent="VBoxContainer/hbc0-plus"]
+custom_minimum_size = Vector2(110, 110)
+layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.972549, 0.513726, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "+"
+
+[connection signal="pressed" from="VBoxContainer/hbc7-9/btn7" to="." method="_on_btn_number_pressed" binds= [7]]
+[connection signal="pressed" from="VBoxContainer/hbc7-9/btn8" to="." method="_on_btn_number_pressed" binds= [8]]
+[connection signal="pressed" from="VBoxContainer/hbc7-9/btn9" to="." method="_on_btn_number_pressed" binds= [9]]
+[connection signal="pressed" from="VBoxContainer/hbc7-9/btnDivide" to="." method="_on_btn_symbol_pressed" binds= ["/"]]
+[connection signal="pressed" from="VBoxContainer/hbc4-6/btn4" to="." method="_on_btn_number_pressed" binds= [4]]
+[connection signal="pressed" from="VBoxContainer/hbc4-6/btn5" to="." method="_on_btn_number_pressed" binds= [5]]
+[connection signal="pressed" from="VBoxContainer/hbc4-6/btn6" to="." method="_on_btn_number_pressed" binds= [6]]
+[connection signal="pressed" from="VBoxContainer/hbc4-6/btnMultiply" to="." method="_on_btn_symbol_pressed" binds= ["*"]]
+[connection signal="pressed" from="VBoxContainer/hbc1-4/btn1" to="." method="_on_btn_number_pressed" binds= [1]]
+[connection signal="pressed" from="VBoxContainer/hbc1-4/btn2" to="." method="_on_btn_number_pressed" binds= [2]]
+[connection signal="pressed" from="VBoxContainer/hbc1-4/btn3" to="." method="_on_btn_number_pressed" binds= [3]]
+[connection signal="pressed" from="VBoxContainer/hbc1-4/btnMinus" to="." method="_on_btn_symbol_pressed" binds= ["-"]]
+[connection signal="pressed" from="VBoxContainer/hbc0-plus/btn0" to="." method="_on_btn_number_pressed" binds= [0]]
+[connection signal="pressed" from="VBoxContainer/hbc0-plus/btnEquals" to="." method="_on_btn_equals_pressed"]
+[connection signal="pressed" from="VBoxContainer/hbc0-plus/btnPlus" to="." method="_on_btn_symbol_pressed" binds= ["+"]]
