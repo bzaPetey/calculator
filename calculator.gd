@@ -4,22 +4,43 @@ class_name Calculator extends Panel
 
 var total:int = 0
 var opperation = ""
-var display:String = "0"
+
 
 
 func _on_btn_number_pressed(number: int) -> void:
-	if display != "0":
-		display += str(number)
-	else:
-		display = str(number)
+	if output.text == "0":
+		output.text = ""
 
-	output.text = display
+	output.text = str(number)
 
 
 
 func _on_btn_symbol_pressed(symbol:String) -> void:
-	print(symbol)
+	match symbol:
+		"+":
+			opperation = "+"
+				
+		"-":
+			opperation = "-"
+		"*":
+			opperation = "*"
+		"/":
+			opperation = "/"
+	
+	total = int(output.text)
+	output.text = "0"
 
 
 func _on_btn_equals_pressed() -> void:
-	print('=')
+	match opperation:
+		"+":
+			total += int(output.text)
+		"-":
+			total -= int(output.text)
+		"*":
+			total *= int(output.text)
+		"/":
+			total /= int(output.text)
+	
+	opperation = ""
+	output.text = str(total)
