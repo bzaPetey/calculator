@@ -11,7 +11,7 @@ func _on_btn_number_pressed(number: int) -> void:
 	if output.text == "0":
 		output.text = ""
 
-	output.text = str(number)
+	output.text += str(number)
 
 
 
